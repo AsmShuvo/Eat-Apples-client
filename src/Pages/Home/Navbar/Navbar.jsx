@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import CustomButton from './../../../components/CustomButton'; // Updated import
 
 const Navbar = () => {
     return (
-        <div>
+        <div className='mt-2'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -23,38 +25,39 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li>
+                            <li><NavLink to={"/"}>Home</NavLink></li>
+                            <li><NavLink to={"/products"}>Products</NavLink></li>
+                            <li><NavLink to={"/contact"}>Contact</NavLink></li>
+
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <a className="btn btn-ghost font-logo text-5xl">Apple</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <details>
-                                <summary>Parent</summary>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>Item 3</a></li>
+                    <ul className="menu menu-horizontal px-1 uppercase font-semibold">
+                        <li><NavLink to={"/"}>Home</NavLink></li>
+                        <li><NavLink to={"/products"}>Products</NavLink></li>
+                        <li><NavLink to={"/contact"}>Contact</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <label className="input input-bordered flex items-center gap-2">
+                        <input type="text" className="grow" placeholder="Search" />
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            className="h-4 w-4 opacity-70">
+                            <path
+                                fillRule="evenodd"
+                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                                clipRule="evenodd" />
+                        </svg>
+                    </label>
+                    <Link to="/login"><CustomButton text="login" style={"btn-sm"}/></Link>
                 </div>
             </div>
+
         </div>
     );
 };
