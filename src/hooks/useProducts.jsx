@@ -2,17 +2,18 @@ import React from 'react';
 import useAxios from './useAxios';
 import { useQuery } from '@tanstack/react-query';
 
-const useProducts = () => {
+const useProducts = (page = 1, searchQuery = '') => {
     const axios = useAxios();
-    const { data: products, refetch: productRefetch } = useQuery({
-        queryKey: ["products"],
+    
+    const productsQuery = useQuery({
+        queryKey: ["products", page, searchQuery],
         queryFn: async () => {
-            const res = await axios.get("/product/show-product");
+            const res = await axios.get(`/product/show-product?page=${page}&limit=12&search=${searchQuery}`);
             return res.data;
-        }
-    })
-    // console.log("Products:", products);
-    return [products, productRefetch];
+        },
+    });
+
+    return { productsData: productsQuery.data, productsRefetch: productsQuery.refetch };
 };
 
 export default useProducts;

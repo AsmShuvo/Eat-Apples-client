@@ -1,8 +1,17 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import CustomButton from './../../../components/CustomButton'; // Updated import
+import React, { useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import CustomButton from './../../../components/CustomButton';
 
 const Navbar = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
+        if (e.key === 'Enter') {
+            navigate(`/products?search=${searchQuery}`);
+        }
+    };
+
     return (
         <div className='mt-2'>
             <div className="navbar bg-base-100">
@@ -42,7 +51,14 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <label className="input input-bordered flex items-center gap-2">
-                        <input type="text" className="grow" placeholder="Search" />
+                        <input 
+                            type="text" 
+                            className="grow" 
+                            placeholder="Search" 
+                            value={searchQuery} 
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={handleSearch} // Trigger search on Enter
+                        />
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"

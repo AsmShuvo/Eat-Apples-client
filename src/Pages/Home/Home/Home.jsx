@@ -7,8 +7,6 @@ import Category from '../Category/Category';
 const Home = () => {
     return (
         <div>
-            <MiniNav/>
-            <Navbar/>
             <Banner/>
             <Category/>
         </div>
