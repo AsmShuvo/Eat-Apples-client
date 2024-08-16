@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import CustomButton from './../../../components/CustomButton';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 const Navbar = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const navigate = useNavigate();
+    const { user, logOut } = useContext(AuthContext)
 
     const handleSearch = (e) => {
         if (e.key === 'Enter') {
@@ -51,11 +53,11 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <label className="input input-bordered flex items-center gap-2">
-                        <input 
-                            type="text" 
-                            className="grow" 
-                            placeholder="Search" 
-                            value={searchQuery} 
+                        <input
+                            type="text"
+                            className="grow"
+                            placeholder="Search"
+                            value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             onKeyDown={handleSearch} // Trigger search on Enter
                         />
@@ -70,7 +72,23 @@ const Navbar = () => {
                                 clipRule="evenodd" />
                         </svg>
                     </label>
-                    <Link to="/login"><CustomButton text="login" style={"btn-sm"}/></Link>
+
+                    {
+                        user ? <div className="dropdown dropdown-end">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src={user?.photoURL} />
+                                </div>
+                            </div>
+                            <ul
+                                tabIndex={0}
+                                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                <li><button onClick={()=>logOut()}>Logout</button></li>
+                            </ul>
+                        </div> : <Link to="/register" ><CustomButton text="Register" style={"btn-sm"} /></Link>
+                    }
                 </div>
             </div>
 
