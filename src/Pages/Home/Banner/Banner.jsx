@@ -88,8 +88,8 @@ const Banner = () => {
                     <img src={img2} className="w-full" />
                     <div className="absolute h-full items-center   flex flex-col left-0 top-0 gap-4">
                         <div className="space-y-7 pl-16 mt-16 ml-20">
-                            <h1 className="text-6xl  tracking-wider heading mt-16 uppercase text-gray-900 font-mono font-bold">
-                                Mackbook with retina display
+                            <h1 className="text-5xl  tracking-wider heading mt-16 uppercase text-gray-900 font-mono font-bold">
+                                Mackbook with <br/>retina display
                             </h1>
                             <p className="text-lg w-1/2 poppins text-gray-700">
                                 All new with 13-inch & 15-inch
