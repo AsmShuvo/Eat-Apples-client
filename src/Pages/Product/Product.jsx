@@ -10,8 +10,10 @@ const Product = ({ product }) => {
         <Link to={`/product/show-product/${product._id}`}>
             <div className='flex justify-center'>
                 <div class="group my-10 rounded-lg  flex w-full max-w-xs flex-col overflow-hidden bg-white">
-                    <a class="relative flex h-80 w-72 overflow-hidden" href="#">
-                        <img class="absolute top-0 right-0 h-full w-full object-cover" src={product.image} />
+                    <a class="relative flex h-80 w-80 overflow-hidden" href="#">
+                        <div className='mx-auto ml-2'>
+                            <img class="absolute top-0 right-0 h-full w-full object-cover " src={product.image} />
+                        </div>
                         <div class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
                             <button class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
