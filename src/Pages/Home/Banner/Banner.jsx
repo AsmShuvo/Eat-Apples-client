@@ -9,12 +9,12 @@ import { SlCallEnd } from "react-icons/sl";
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-[580px]">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src={img1} className="w-full" />
+            <div className="carousel border  w-full h-[500px] lg:h-[580px]">
+                <div id="slide1" className="carousel-item relative w-full flex flex-col md:flex-row">
+                    <img src={img1} className="w-80 lg:w-full " />
                     <div className="absolute  h-full items-center  flex flex-col left-0 top-0 gap-4">
-                        <div className="space-y-7 pl-16 mt-16 ml-20">
-                            <h1 className="text-6xl text-gray-900 tracking-wider heading mt-16 uppercase  font-mono font-bold">
+                        <div className="space-y-7  md:pl-16 mt-16 ml-8 md:ml-20">
+                            <h1 className="text-sm lg:text-6xl text-gray-900 tracking-wider heading mt-16 uppercase  font-mono font-bold">
                                 iPhone 15 Series <br /> in EatApple
                             </h1>
                             <p className="text-lg w-1/2 poppins text-gray-700">
@@ -84,11 +84,11 @@ const Banner = () => {
                         </a>
                     </div>
                 </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src={img2} className="w-full" />
+                <div id="slide2" className="carousel-item relative w-full flex flex-col md:flex-row">
+                    <img src={img2} className="w-80 lg:w-full " />
                     <div className="absolute h-full items-center   flex flex-col left-0 top-0 gap-4">
-                        <div className="space-y-7 pl-16 mt-16 ml-20">
-                            <h1 className="text-5xl  tracking-wider heading mt-16 uppercase text-gray-900 font-mono font-bold">
+                        <div className="space-y-7 md:pl-16 mt-16 ml-8 md:ml-20">
+                            <h1 className="text-sm md:text-5xl  tracking-wider heading mt-16 uppercase text-gray-900 font-mono font-bold">
                                 Mackbook with <br/>retina display
                             </h1>
                             <p className="text-lg w-1/2 poppins text-gray-700">
@@ -158,11 +158,11 @@ const Banner = () => {
                         </a>
                     </div>
                 </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src={img3} className="w-full" />
+                <div id="slide3" className="carousel-item relative w-full flex flex-col md:flex-row">
+                    <img src={img3} className="w-80 lg:w-full " />
                     <div className="absolute h-full items-center   flex flex-col left-0 top-0 gap-4">
-                        <div className="space-y-7 pl-16 mt-16 ml-20">
-                            <h1 className="text-5xl text-gray-900 tracking-wider heading mt-16 uppercase font-bold">
+                        <div className="space-y-7 md:pl-16 mt-16 ml-8 md:ml-20">
+                            <h1 className="text-sm md:text-5xl text-gray-900 tracking-wider heading mt-16 uppercase font-bold">
                                 Future of healh is <br /> on your wrist
                             </h1>
                             <p className="text-lg w-1/2 poppins text-gray-700">
