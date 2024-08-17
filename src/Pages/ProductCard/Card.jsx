@@ -21,7 +21,7 @@ const Card = () => {
 
     return (
         <div className="min-h-screen">
-            <div class="w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
+            <div class="w-full bg-white m-4 rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
                 <div class="w-full md:w-2/5 h-80">
                     <img class="object-center object-cover w-96 h-80" src={product?.product.image} alt="photo" />
                 </div>

@@ -7,9 +7,9 @@ import ipad from "../../../assets/category/ipad.png";
 const Category = () => {
     return (
         <div className='flex gap-6 justify-center items-center m-10'>
-            <CatergoryCard image={watch} title={"Smart watches"} price={"23"}/>
-            <CatergoryCard image={ipad} title={"ipad & ipad air"} price={"23"}/>
-            <CatergoryCard image={iphone} title={"Mobile Phones"} price={"23"}/>
+            <CatergoryCard image={watch} title={"Smart watches"} price={"1000"}/>
+            <CatergoryCard image={ipad} title={"ipad & MacBook"} price={"6000"}/>
+            <CatergoryCard image={iphone} title={"Mobile Phones"} price={"3000"}/>
         </div>
     );
 };
